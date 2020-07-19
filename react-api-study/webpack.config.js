@@ -47,4 +47,49 @@ module.exports = {
     path: __dirname + "/dist",
     filename: "main.js",
   },
+
+  /**
+   * Setting for compile before bundling files.
+   * this complier called *loader*.
+   * test
+   *  assign the file type using by reguler expression.
+   * exclude
+   *  exclude the directory or files on bundling.
+   * use
+   *  select loader.
+   *    loader... loader name.
+   *    options... configuration the loader.
+   */
+  module: {
+    rules: [
+      {
+        test: /\.js[x]?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-react",
+                "@babel/preset-flow",
+              ],
+              plugins: [
+                "@babel/plugin-syntax-jsx",
+                "transform-flow-strip-types",
+                "transform-class-properties",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * These extensions are skipped on import syntax.
+   */
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],
+  },
 };
