@@ -10,9 +10,11 @@ export class Form extends Component {
   render() {
     // const value: string = "test";
     return (
-      <form>
-        <input type="text"></input>
-      </form>
+      <div className="wrapper">
+        <form>
+          <input type="text"></input>
+        </form>
+      </div>
     );
   }
 }

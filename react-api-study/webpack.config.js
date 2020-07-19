@@ -22,7 +22,7 @@ module.exports = {
    * Ignore file or direcotry for *watch*.
    */
   watchOptions: {
-    ignored: /node_modules/,
+    ignored: [/node_modules/, "./src/__test__/"],
   },
 
   /**
@@ -80,6 +80,16 @@ module.exports = {
                 "transform-class-properties",
               ],
             },
+          },
+        ],
+      },
+      {
+        test: /\.css/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { url: false },
           },
         ],
       },
