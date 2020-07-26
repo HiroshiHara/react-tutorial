@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
 
-method("es7");
+method("es8");
 culc(3, 4);
 
 ReactDOM.render(<Form />, document.getElementById("app"));

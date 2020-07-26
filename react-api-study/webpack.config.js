@@ -1,3 +1,8 @@
+// get *path* module from nodejs.
+const path = require("path");
+// resolve the *dist* path.
+const outputPath = path.resolve(__dirname, "dist");
+
 module.exports = {
   /**
    * Output mode.
@@ -44,8 +49,18 @@ module.exports = {
      *  output.filename
      *  filename of output.
      */
-    path: __dirname + "/dist",
+    path: outputPath,
     filename: "main.js",
+  },
+
+  /**
+   * Configuration for webpack-dev-server.
+   *  contentBase
+   *    The location of file that will be automatically
+   *    executed when the server is run.
+   */
+  devServer: {
+    contentBase: outputPath,
   },
 
   /**
