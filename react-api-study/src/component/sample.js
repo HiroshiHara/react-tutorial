@@ -6,7 +6,11 @@ export const method = (str: string) => {
   console.log(`Hello, ${str}!`);
 };
 
-export class Form extends Component {
+type Props = {};
+
+type State = {};
+
+export class Form extends Component<Props, State> {
   render() {
     // const value: string = "test";
     return (
