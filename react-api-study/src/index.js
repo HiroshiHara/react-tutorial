@@ -1,10 +1,6 @@
-import { method, Form } from "./component/sample";
-import { culc } from "./component/culc";
 import React from "react";
 import ReactDOM from "react-dom";
+import { Timer } from "./component/Timer";
 import "./style.css";
 
-method("es8");
-culc(3, 4);
-
-ReactDOM.render(<Form />, document.getElementById("app"));
+ReactDOM.render(<Timer />, document.getElementById("app"));

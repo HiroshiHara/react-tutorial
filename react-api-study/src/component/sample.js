@@ -14,7 +14,7 @@ export class Form extends Component<Props, State> {
   render() {
     // const value: string = "test";
     return (
-      <div className="wrapper">
+      <div className="form-wrapper">
         <form>
           <input type="text"></input>
         </form>
