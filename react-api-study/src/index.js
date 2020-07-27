@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Timer } from "./component/Timer";
+import { ItemBox } from "./component/ItemBox";
 import "./style.css";
 
-ReactDOM.render(<Timer />, document.getElementById("app"));
+ReactDOM.render(<ItemBox />, document.getElementById("app"));

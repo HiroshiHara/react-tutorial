@@ -3,36 +3,37 @@
 import React, { Component } from "react";
 
 type Props = {};
-type State = { current: string };
-
-let intervalID = null;
+type State = { current: Date };
 
 export class Timer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      current: this.loadCurrentTime(),
+      current: new Date(),
     };
   }
 
   componentDidMount() {
-    intervalID = setInterval(() => {
+    // this *this* means additional fiels on this(lol) class.
+    this.intervalID = setInterval(() => {
       this.setState({
-        current: this.loadCurrentTime(),
+        current: new Date(),
       });
     }, 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(intervalID);
-  }
-
-  loadCurrentTime(): string {
-    const date: Date = new Date();
-    return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+    clearInterval(this.intervalID);
   }
 
   render() {
-    return <div className="timer-wrapper">{this.state.current}</div>;
+    const dateAndTime: Date = this.state.current;
+    return (
+      <div className="timer-wrapper">
+        {dateAndTime.toLocaleDateString() +
+          " " +
+          dateAndTime.toLocaleTimeString()}
+      </div>
+    );
   }
 }
