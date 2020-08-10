@@ -28,7 +28,7 @@ export class Counter extends Component<Props, State> {
     return (
       <div className="counter-wrapper">
         <div onClick={this.incrementCount.bind(this)}>
-          {this.state.currentCount}
+          <span>{this.state.currentCount}</span>
         </div>
       </div>
     );

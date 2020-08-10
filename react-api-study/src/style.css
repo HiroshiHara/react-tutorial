@@ -1,17 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .form-wrapper {
   background-color: green;
 }
 
 .itembox-wrapper {
+  border: 1px solid #ccc;
+  display: block;
   width: 450px;
   height: 200px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 25px;
   padding: 10px;
   background-color: #bff2c9;
   color: #171a18;
-  position: absolute;
 }
 
 .timer-wrapper {
@@ -20,7 +23,15 @@
 }
 
 .counter-wrapper {
-  position: relative;
-  top: 140px;
-  left: 420px;
+  background-color: springgreen;
+  text-align: center;
+  border: 1px solid #ccc;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.counter-wrapper span {
+  display: block;
+  line-height: 30px;
 }
