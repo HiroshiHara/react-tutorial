@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 
 type Props = { defaultValue: ?string };
-type State = { value: string };
+type State = { value: ?string };
 
 export class FlavorForm extends Component<Props, State> {
   constructor(props: Props) {
@@ -20,7 +20,9 @@ export class FlavorForm extends Component<Props, State> {
   }
 
   handleSubmit(event: Event) {
-    alert("A favorite flavor is: " + this.state.value);
+    if (this.state.value) {
+      alert("A favorite flavor is: " + this.state.value);
+    }
     event.preventDefault();
   }
 

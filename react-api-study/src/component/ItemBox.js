@@ -5,16 +5,16 @@ import { Counter } from "./Counter";
 import { Timer } from "./Timer";
 import { Lists } from "./Lists";
 
-type Props = { lists: Array<String> };
+type Props = { lists: Array<string> };
 type State = {};
 
 export class ItemBox extends Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
   }
 
   render() {
-    const lists: Array<String> = this.props.lists;
+    const lists: Array<string> = this.props.lists;
     return (
       <div className="itembox-wrapper">
         <Timer />

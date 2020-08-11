@@ -17,7 +17,7 @@ export class Counter extends Component<Props, State> {
     };
   }
 
-  incrementCount(e: event) {
+  incrementCount(e: Event) {
     e.preventDefault();
     this.setState({
       currentCount: this.state.currentCount + 1,

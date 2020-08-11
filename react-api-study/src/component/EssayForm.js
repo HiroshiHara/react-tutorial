@@ -2,8 +2,8 @@
 
 import React, { Component } from "react";
 
-type Props = { defaultValue: ?string };
-type State = { value: string };
+type Props = { defaultValue?: string };
+type State = { value: ?string };
 
 export class EssayForm extends Component<Props, State> {
   constructor(props: Props) {
@@ -20,7 +20,9 @@ export class EssayForm extends Component<Props, State> {
   }
 
   handleSubmit(event: Event) {
-    alert("A essay was submitted: " + this.state.value);
+    if (this.state.value) {
+      alert("A essay was submitted: " + this.state.value);
+    }
     event.preventDefault();
   }
 

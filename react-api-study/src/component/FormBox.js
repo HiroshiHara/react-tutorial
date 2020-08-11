@@ -7,11 +7,11 @@ import { NameForm } from "./NameForm";
 import { EssayForm } from "./EssayForm";
 import { FlavorForm } from "./FlavorForm";
 
-type Props = { nameDefVal: ?string };
+type Props = { nameDefVal?: string };
 type State = {};
 
 export class FormBox extends Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
   }
 
