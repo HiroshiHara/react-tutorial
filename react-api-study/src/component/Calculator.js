@@ -42,7 +42,7 @@ export class Calculator extends Component<Props, State> {
         ? this.tryConvert(temperature, this.toFahrenheit)
         : temperature;
     return (
-      <div>
+      <div className="calclator-wrapper">
         <TemperatureInput
           scale="c"
           temperature={celsius}

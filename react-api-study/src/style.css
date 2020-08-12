@@ -42,6 +42,14 @@ body {
   line-height: 30px;
 }
 
+.calculator-wrapper {
+  border: 1px solid #ccc;
+}
+
+.table-wrapper {
+  border: 1px solid #ccc;
+}
+
 .strong-text {
   font-weight: bold;
 }

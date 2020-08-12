@@ -3,7 +3,11 @@ import React, { Component } from "react";
 import { ProductCategoryRow } from "./ProductCategoryRow";
 import { ProductRow } from "./ProductRow";
 
-type Props = { data: Array<Object> };
+type Props = {
+  data: Array<Object>,
+  filterText: string,
+  isStockOnly: Boolean,
+};
 type State = {};
 
 export class ProductTable extends Component<Props, State> {
@@ -12,9 +16,18 @@ export class ProductTable extends Component<Props, State> {
   }
 
   render() {
-    const rows = [];
+    const filterText = this.props.filterText;
+    const isStockOnly = this.props.isStockOnly;
+    let rows = [];
     let lastCategory = null;
+
     this.props.data.forEach((row) => {
+      if (row.name.indexOf(filterText) === -1) {
+        return;
+      }
+      if (isStockOnly && !row.stocked) {
+        return;
+      }
       if (row.category !== lastCategory) {
         rows.push(
           <ProductCategoryRow category={row.category} key={row.category} />
