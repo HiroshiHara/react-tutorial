@@ -41,3 +41,7 @@ body {
   display: block;
   line-height: 30px;
 }
+
+.strong-text {
+  font-weight: bold;
+}
